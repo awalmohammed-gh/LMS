@@ -25,7 +25,7 @@ const router = createBrowserRouter(
 
 
       {/* educator dashboard */}
-      <Route path="/educator" element={<EducatorLayout/>}>
+      <Route path="/educator/dashboard" element={<EducatorLayout/>}>
          <Route index element={<Overview/>}/>
          <Route path="add-course" element={<AddCourse/>}/>
          <Route path="my-course" element={<MyCourses/>}/>
