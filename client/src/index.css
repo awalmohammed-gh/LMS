@@ -17,7 +17,7 @@
 
   /* Backgrounds */
   --color-background: #0b1220;
-  --color-second-background: #EEEEEE;
+  --color-second-background: #eeeeee;
   --color-surface: #111827;
   --color-surface-light: #1f2937;
 
@@ -121,4 +121,29 @@
 /* ===== TEXT HELPERS ===== */
 .text-muted {
   color: var(--color-muted);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}
+.animate-slideUp {
+  animation: slideUp 0.3s ease-out;
 }

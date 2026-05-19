@@ -14,8 +14,9 @@ import {
   GraduationCap,
 } from "lucide-react";
 
-const Navbar = () => {
-  const { isLoggedIn, setIsLoggedIn, user } = useLearningContext();
+const Navbar = ({onOpen}) => {
+  const { isLoggedIn, setIsLoggedIn, user, setCurrentState } =
+    useLearningContext();
   const [showLog, setShowLog] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -51,6 +52,17 @@ const Navbar = () => {
     { to: "/courses", label: "Courses", icon: BookOpen },
   ];
 
+
+  const handleLogin = () =>{
+    onOpen();
+    setCurrentState("login")
+  }
+
+
+  const handleSignUp = () =>{
+    onOpen();
+    setCurrentState("signup")
+  }
   return (
     <nav className="sticky top-0 z-50 w-full bg-white border-b border-gray-200 shadow-sm py-2">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -163,12 +175,12 @@ const Navbar = () => {
             ) : (
               <div className="flex gap-3">
                 <button
-                  onClick={() => setIsLoggedIn(true)}
+                  onClick={handleLogin}
                   className="px-5 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-all duration-300"
                 >
                   Login
                 </button>
-                <button className="px-5 py-2 border-2 border-gray-300 text-gray-700 text-sm font-medium rounded-lg hover:border-blue-600 hover:text-blue-600 transition-all duration-300">
+                <button onClick={handleSignUp} className="px-5 py-2 border-2 border-gray-300 text-gray-700 text-sm font-medium rounded-lg hover:border-blue-600 hover:text-blue-600 transition-all duration-300">
                   Sign Up
                 </button>
               </div>

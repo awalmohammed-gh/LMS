@@ -9,6 +9,8 @@ export const LearningContextProvider = ({children}) => {
     const [showSearch, setShowSearch] = useState(false);
     const [search, setSearch] = useState('')
     const [addItems, setAddItems] = useState({});
+  const [currentState, setCurrentState] = useState("login");
+
 
     const addToCart = (itemId) =>{
        setAddItems((prev) =>{
@@ -31,7 +33,9 @@ export const LearningContextProvider = ({children}) => {
       search,
       setSearch,
       addItems,
-      addToCart
+      addToCart,
+      currentState,
+      setCurrentState,
     };
   return (
     <LearningContext.Provider value={learning}>
