@@ -1,0 +1,124 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+@import "tailwindcss";
+
+@theme {
+  /* Primary brand */
+  --color-primary: #4f46e5;
+  --color-primary-dull: #4338ca;
+
+  /* Secondary accent */
+  --color-secondary: #06b6d4;
+
+  /* Backgrounds */
+  --color-background: #0b1220;
+  --color-second-background: #EEEEEE;
+  --color-surface: #111827;
+  --color-surface-light: #1f2937;
+
+  /* Text */
+  --color-text: #e5e7eb;
+  --color-muted: #9ca3af;
+
+  /* Status colors */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+
+  /* Borders */
+  --color-border: rgba(255, 255, 255, 0.08);
+
+  /* Radius */
+  --radius-custom: 12px;
+
+  /* Shadow */
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* ===== GLOBAL STYLES ===== */
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-custom);
+  box-shadow: var(--shadow-card);
+  padding: 16px;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  background: var(--color-surface-light);
+  transform: translateY(-3px);
+}
+
+/* ===== BUTTON BASE ===== */
+.btn {
+  padding: 10px 16px;
+  border-radius: var(--radius-custom);
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Primary Button */
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-dull);
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background: var(--color-surface-light);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+  background: #2a3548;
+}
+
+/* Outline Button */
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+/* Danger Button */
+.btn-danger {
+  background: var(--color-danger);
+  color: white;
+}
+
+.btn-danger:hover {
+  opacity: 0.85;
+}
+
+/* ===== TEXT HELPERS ===== */
+.text-muted {
+  color: var(--color-muted);
+}
